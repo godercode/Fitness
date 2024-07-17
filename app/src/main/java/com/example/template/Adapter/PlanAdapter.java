@@ -5,8 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -54,10 +54,12 @@ public class PlanAdapter extends RecyclerView.Adapter<PlanAdapter.PlanViewHolder
             return;
         }
         Long totalTime = FitnessDatabase.getInstance(mContext).workoutSessionDao().getTotalTimeForExercise(exercise.getExerciseId());
+        holder.progressBar.setMax(90);
         if (totalTime == null) {
-            holder.tvTime.setText("0 s");
+            holder.progressBar.setProgress(0);
         } else {
-            holder.tvTime.setText(String.format("%d s", totalTime / 1000));
+
+            holder.progressBar.setProgress((int) (totalTime / 1000));
         }
         holder.tvExercise.setText(exercise.getExerciseName());
         holder.imgExercise.setImageResource(exercise.getExerciseImage());
@@ -116,13 +118,14 @@ public class PlanAdapter extends RecyclerView.Adapter<PlanAdapter.PlanViewHolder
     }
 
     public static class PlanViewHolder extends RecyclerView.ViewHolder {
-        TextView tvExercise, tvTime;
+        TextView tvExercise;
+        ProgressBar progressBar;
         ImageView imgExercise;
         Button btnDelete, btnAdd;
         RelativeLayout itemExercise;
         public PlanViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvTime = itemView.findViewById(R.id.tv_time);
+            progressBar = itemView.findViewById(R.id.progressBar);
             tvExercise = itemView.findViewById(R.id.tv_exercise);
             imgExercise = itemView.findViewById(R.id.img_exercise);
             itemExercise = itemView.findViewById(R.id.exercise_item);
