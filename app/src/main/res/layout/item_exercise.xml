@@ -30,17 +30,26 @@
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tiến trình"
-                android:textColor="#7E7D7D"
+                android:text="Tiến trình:"
+                android:layout_marginRight="120dp"
+                android:textColor="@color/black"
                 android:textSize="14sp" />
-            <ProgressBar
-                android:id="@+id/progressBar"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_tien_trinh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hoàn thành"
+                android:textColor="#7E7D7D"
+                android:textSize="12sp" />
+        </LinearLayout>
+
     </LinearLayout>
     <Button
         android:id="@+id/btn_delete"

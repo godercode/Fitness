@@ -1,6 +1,7 @@
 package com.example.template.Adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,12 +55,18 @@ public class PlanAdapter extends RecyclerView.Adapter<PlanAdapter.PlanViewHolder
             return;
         }
         Long totalTime = FitnessDatabase.getInstance(mContext).workoutSessionDao().getTotalTimeForExercise(exercise.getExerciseId());
-        holder.progressBar.setMax(90);
         if (totalTime == null) {
-            holder.progressBar.setProgress(0);
+            holder.tvTienTrinh.setText("Chưa bắt đầu");
+            holder.tvTienTrinh.setTextColor(Color.RED);
         } else {
-
-            holder.progressBar.setProgress((int) (totalTime / 1000));
+            long totalTimeSeconds = totalTime / 1000; // Chuyển đổi từ milliseconds sang seconds
+            if (totalTimeSeconds > 0 && totalTimeSeconds < 90) {
+                holder.tvTienTrinh.setText("Đang tập");
+                holder.tvTienTrinh.setTextColor(Color.CYAN);
+            } else {
+                holder.tvTienTrinh.setText("Hoàn thành");
+                holder.tvTienTrinh.setTextColor(Color.GREEN);
+            }
         }
         holder.tvExercise.setText(exercise.getExerciseName());
         holder.imgExercise.setImageResource(exercise.getExerciseImage());
@@ -118,14 +125,13 @@ public class PlanAdapter extends RecyclerView.Adapter<PlanAdapter.PlanViewHolder
     }
 
     public static class PlanViewHolder extends RecyclerView.ViewHolder {
-        TextView tvExercise;
-        ProgressBar progressBar;
+        TextView tvExercise, tvTienTrinh;
         ImageView imgExercise;
         Button btnDelete, btnAdd;
         RelativeLayout itemExercise;
         public PlanViewHolder(@NonNull View itemView) {
             super(itemView);
-            progressBar = itemView.findViewById(R.id.progressBar);
+            tvTienTrinh = itemView.findViewById(R.id.tv_tien_trinh);
             tvExercise = itemView.findViewById(R.id.tv_exercise);
             imgExercise = itemView.findViewById(R.id.img_exercise);
             itemExercise = itemView.findViewById(R.id.exercise_item);
