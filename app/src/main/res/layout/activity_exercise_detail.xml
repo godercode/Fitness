@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ExerciseDetail">
+    <include layout="@layout/top_nav"/>
+    <VideoView
+        android:id="@+id/vdv_exercise"
+        android:layout_width="410dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center" />
+    <ImageButton
+        android:id="@+id/btn_play"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:background="@drawable/circle_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/play_arrow" />
+    <Chronometer
+        android:id="@+id/chronometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="18sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Hướng dẫn tập:"
+        android:textSize="20sp"
+        android:textColor="@color/purple_blue" />
+    <TextView
+        android:id="@+id/editTextTextMultiLine"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_margin="16dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:text="Để thực hiện bài tập hít đất cổ điển, bạn nằm sấp xuống sàn, đặt hai tay về phía trước, hướng về phía trước và gối chân chạm đất. Sau đó, bạn sẽ đẩy cơ thể lên bằng cả hai tay, duỗi cánh tay ra và giữ cơ thể thẳng tạo thành một dạng đường thẳng từ đầu đến chân. Từ vị trí này, hạ cơ thể xuống sàn rồi lặp lại quá trình."
+        android:textAlignment="inherit" />
+    <TextView
+        android:id="@+id/tv_total_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="18sp"
+        android:text="Total time: 0 seconds"/>
+    <ImageButton
+        android:id="@+id/btn_skip"
+        android:layout_marginEnd="20dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="end"
+        android:background="@drawable/circle_button"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_skip"
+        android:visibility="gone"/>
+</LinearLayout>

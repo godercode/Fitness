@@ -1,0 +1,179 @@
+<!-- res/layout/activity_profile.xml -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp"
+    tools:context=".UserFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="16dp">
+        <TextView
+            android:id="@+id/tv_ho_so"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="26sp"
+            android:layout_gravity="center"
+            android:text="Hồ sơ"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giới tính:"
+            android:textStyle="bold"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_background"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/rbt_nam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nam" />
+
+            <RadioButton
+                android:id="@+id/rbt_nu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nữ" />
+        </RadioGroup>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Họ tên:"
+            android:textStyle="bold"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/et_ho_ten"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập họ tên"
+            android:padding="8dp"
+            android:background="@drawable/edit_text_background"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CÂN NẶNG CỦA BẠN:"
+            android:textStyle="bold"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/et_can_nang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập cân nặng - kg"
+            android:inputType="number"
+            android:padding="8dp"
+            android:background="@drawable/edit_text_background"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Độ tuổi:"
+            android:textStyle="bold"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"/>
+        <EditText
+            android:id="@+id/et_tuoi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="Nhập tuổi"
+            android:padding="8dp"
+            android:background="@drawable/edit_text_background"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chiều cao:"
+            android:textStyle="bold"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/et_chieu_cao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập chiều cao - cm"
+            android:inputType="number"
+            android:padding="8dp"
+            android:background="@drawable/edit_text_background"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cấp độ:"
+            android:textStyle="bold"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_background"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rbt_easy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mới bắt đầu" />
+
+            <RadioButton
+                android:id="@+id/rbt_normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trung bình" />
+
+            <RadioButton
+                android:id="@+id/rbt_hard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nâng cao" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mục tiêu:"
+            android:textStyle="bold"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"/>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_background"
+            android:orientation="vertical">
+            <RadioButton
+                android:id="@+id/rbt_weight_gain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tăng cân" />
+
+            <RadioButton
+                android:id="@+id/rbt_weight_loss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Giảm cân" />
+
+            <RadioButton
+                android:id="@+id/rbt_muscle_gain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tăng cơ" />
+        </RadioGroup>
+        <Button
+            android:id="@+id/btn_save_in4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_gravity="center"
+            android:text="Save"/>
+    </LinearLayout>
+</ScrollView>

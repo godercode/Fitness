@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_plan"
+        android:title="@string/action_plan"
+        android:icon="@drawable/ic_plan"/>
+
+    <item android:id="@+id/action_muscle"
+        android:title="@string/action_Muscle"
+        android:icon="@drawable/ic_exercise"/>
+
+    <item android:id="@+id/action_nutrition"
+        android:title="@string/action_nutrition"
+        android:icon="@drawable/ic_nutrition"/>
+
+    <item android:id="@+id/action_user"
+        android:title="@string/action_user"
+        android:icon="@drawable/ic_user"/>
+</menu>
