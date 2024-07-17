@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Chronometer;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.VideoView;
 
@@ -25,7 +26,7 @@ import java.util.List;
 public class ExerciseDetail extends AppCompatActivity {
     TextView demoText;
     TextView tvName;
-    TextView tvTotalTime;
+    ProgressBar progressBar;
     VideoView videoView;
     ImageButton btnPlay, btnSkip, btnBack;
     Chronometer chronometer;
@@ -55,8 +56,8 @@ public class ExerciseDetail extends AppCompatActivity {
         demoText = findViewById(R.id.editTextTextMultiLine);
         btnSkip = findViewById(R.id.btn_skip);
         chronometer = findViewById(R.id.chronometer);
-        tvTotalTime = findViewById(R.id.tv_total_time);
-
+        progressBar = findViewById(R.id.progressBar2);
+        progressBar.setMax(90);
         btnBack.setOnClickListener(v -> finish());
 
         getDataFromIntent();
@@ -176,12 +177,11 @@ public class ExerciseDetail extends AppCompatActivity {
             runOnUiThread(() -> {
                 if (loadedTotalTime != null) {
                     totalTime = loadedTotalTime;
-                    tvTotalTime.setText("Total time: " + totalTime / 1000 + " seconds");
+                    progressBar.setProgress((int) (totalTime / 1000));
                 } else {
                     totalTime = 0;
-                    tvTotalTime.setText("Total time: 0 seconds");
+                    progressBar.setProgress(0);
                 }
-                // Cập nhật nút btnSkip dựa trên totalTime
                 if (totalTime >= 30000) {
                     btnSkip.setVisibility(View.VISIBLE);
                 } else {

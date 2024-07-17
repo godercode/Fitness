@@ -43,14 +43,12 @@
         android:gravity="start|top"
         android:text="Để thực hiện bài tập hít đất cổ điển, bạn nằm sấp xuống sàn, đặt hai tay về phía trước, hướng về phía trước và gối chân chạm đất. Sau đó, bạn sẽ đẩy cơ thể lên bằng cả hai tay, duỗi cánh tay ra và giữ cơ thể thẳng tạo thành một dạng đường thẳng từ đầu đến chân. Từ vị trí này, hạ cơ thể xuống sàn rồi lặp lại quá trình."
         android:textAlignment="inherit" />
-    <TextView
-        android:id="@+id/tv_total_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_gravity="center_horizontal"
-        android:textSize="18sp"
-        android:text="Total time: 0 seconds"/>
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
     <ImageButton
         android:id="@+id/btn_skip"
         android:layout_marginEnd="20dp"
@@ -61,4 +59,5 @@
         android:scaleType="fitCenter"
         android:src="@drawable/ic_skip"
         android:visibility="gone"/>
+
 </LinearLayout>
