@@ -121,8 +121,13 @@ public class ExerciseDetail extends AppCompatActivity {
                 currentPos = currentPos + 1;
             }
             Exercise nextExercise = listExercise.get(currentPos);
+            stopChronometer();
             exercise = nextExercise;
             setVideo(nextExercise);
+            chronometer.setBase(SystemClock.elapsedRealtime());
+            isResume = false;
+            isChronometerRunning = false; // Reset chronometer state
+            btnPlay.setImageResource(R.drawable.play_arrow);
         });
     }
 
