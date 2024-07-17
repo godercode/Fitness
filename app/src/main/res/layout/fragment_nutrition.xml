@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".NutritionFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:gravity="center"
-        android:textSize="26sp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/action_nutrition" />
+        android:id="@+id/tv_dinhduong"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dinh dưỡng"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:layout_marginTop="10dp"/>
 
-</FrameLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_nutitrion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_dinhduong"/>
+
+</RelativeLayout>

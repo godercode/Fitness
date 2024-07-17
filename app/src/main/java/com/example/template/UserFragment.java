@@ -199,5 +199,6 @@ public class UserFragment extends Fragment {
         insertData.insertPlan();
         insertData.insertMuscle();
         insertData.insertExercise();
+        insertData.insertNutrition();
     }
 }

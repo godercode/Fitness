@@ -32,4 +32,5 @@ public abstract class FitnessDatabase extends RoomDatabase {
     public abstract ExerciseDao exerciseDao();
     public abstract PlanDao planDao();
     public abstract WorkoutSessionDao workoutSessionDao();
+    public abstract NutritionDao nutritionDao();
 }

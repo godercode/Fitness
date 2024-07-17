@@ -5,6 +5,7 @@ import android.content.Context;
 import com.example.template.R;
 import com.example.template.object.Exercise;
 import com.example.template.object.Muscle;
+import com.example.template.object.Nutrition;
 import com.example.template.object.Plan;
 import com.example.template.object.User;
 
@@ -32,6 +33,37 @@ public class InsertData {
             FitnessDatabase.getInstance(mContext).muscleDao().insertMuscle(muscle);
         }
     }
+
+    public void insertNutrition(){
+        List<Nutrition> list = new ArrayList<>();
+        list.add(new Nutrition(1,"Cá hồi", R.drawable.ca_hoi,"208,2KCal",1));
+        list.add(new Nutrition(2,"Sữa", R.drawable.sua,"50KCal",1));
+        list.add(new Nutrition(3,"Súp lơ", R.drawable.sup_lo,"100KCal",1));
+        list.add(new Nutrition(4,"Tôm", R.drawable.tom,"99KCal",1));
+        list.add(new Nutrition(5,"Trứng", R.drawable.trung,"40KCal",1));
+        list.add(new Nutrition(6,"Cà rốt", R.drawable.ca_rot,"41,3KCal",1));
+        list.add(new Nutrition(7,"Rau cải bó xôi", R.drawable.rau_cai_bo_xoi,"23,2KCal",1));
+
+        list.add(new Nutrition(8,"Cá hồi", R.drawable.ca_hoi,"110KCal",2));
+        list.add(new Nutrition(9,"Gạo lứt", R.drawable.gao_lut,"110KCal",2));
+        list.add(new Nutrition(10,"Rau xà lách", R.drawable.rau_xa_lach,"14,8KCal",2));
+        list.add(new Nutrition(11,"Trứng", R.drawable.trung,"40KCal",2));
+        list.add(new Nutrition(12,"Đậu phộng", R.drawable.dau_phong,"56KCal",2));
+        list.add(new Nutrition(13,"Ức gà", R.drawable.uc_ga,"164KCal",2));
+
+        list.add(new Nutrition(14,"Gạo lứt", R.drawable.gao_lut,"110KCal",3));
+        list.add(new Nutrition(15,"Cà chua", R.drawable.ca_chua,"18Cal",3));
+        list.add(new Nutrition(16,"Phô mai", R.drawable.pho_mai,"402KCal",3));
+        list.add(new Nutrition(17,"Tôm", R.drawable.tom,"99KCal",3));
+        list.add(new Nutrition(18,"Ức gà", R.drawable.uc_ga,"164KCal",3));
+        list.add(new Nutrition(19,"Kiều mạch", R.drawable.kieu_mach,"34KCal",3));
+        list.add(new Nutrition(20,"Cá hồi", R.drawable.ca_hoi,"208,2KCal",3));
+
+        for (Nutrition nutrition : list){
+            FitnessDatabase.getInstance(mContext).nutritionDao().insertNutrition(nutrition);
+        }
+    }
+
     public void insertPlan(){
         List<Plan> list = new ArrayList<>();
         list.add(new Plan(1, "weight gain", 1));
